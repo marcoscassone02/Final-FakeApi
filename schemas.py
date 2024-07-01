@@ -4,6 +4,7 @@ from decimal import Decimal
 
 # Esquema Pydantic para la clase Product
 class ProductBase(BaseModel):
+    id : int
     titulo: str
     precio_compra: Decimal
     descripcion: str = None
