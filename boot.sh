@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source mi_entorno/bin/activate
+source env/bin/activate
 fastapi dev

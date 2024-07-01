@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Crear el entorno virtual
-python3 -m venv mi_entorno
+python3 -m venv env
 
 # Activar el entorno virtual
-source mi_entorno/bin/activate
+source env/bin/activate
 
 # Instalar las librerías desde requirements.txt
 pip3 install -r requirements.txt
