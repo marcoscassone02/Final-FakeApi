@@ -19,6 +19,13 @@ def get_product(product_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="product not found")
     return db_product
 
+@router.get("/products_category/{product_category}")
+def get_products_category(product_category: str, db: Session = Depends(get_db)):
+    db_product = crud.get_products_category(db, product_category=product_category)
+    if db_product is None:
+        raise HTTPException(status_code=404, detail="product not found")
+    return db_product
+
 @router.get("/products_max/{max_price}")
 def get_products_under(max_price: int = 0, db: Session = Depends(get_db)):
     products = crud.get_products_max(db, max_price = max_price)

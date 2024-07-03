@@ -34,6 +34,9 @@ def delete_product_by_id(db: Session, product_id: int):
         return True  # Indica que se eliminó con éxito
     else:
         return False
+    
+def get_products_category(db: Session, product_category: str):
+    return (db.query(Product).filter(Product.categoria == product_category)).all()
 
 def get_products_between(db: Session, min_price: int = 0, max_price: int = 0):
     return db.query(Product).filter((Product.precio_compra > min_price) & (Product.precio_compra < max_price)).all()
